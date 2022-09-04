@@ -1,10 +1,17 @@
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 @font-face {
-    font-family: "IranSans";
-    src: url("assets/fonts/IRANSansWeb.ttf");
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: "IranSans";
+  src: url("assets/fonts/IRANSansWeb.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.center-container {
+  max-width: 375px;
+  width: 100%;
+  position: relative;
+}
