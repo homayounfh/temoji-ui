@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { OnboardingPageComponent } from './layouts/onboarding-page/onboarding-page.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
