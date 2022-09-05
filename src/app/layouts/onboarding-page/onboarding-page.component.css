@@ -1,0 +1,32 @@
+.repeated-cup {
+  width: 390px;
+  height: 279px;
+
+  position: relative;
+  margin-left: -31px;
+}
+
+.tibar-emoji {
+  width: 46.91px;
+  height: 43px;
+}
+
+.introduction {
+  margin-top: 24px;
+  gap: 10px;
+}
+
+.center-container {
+  padding: 0 31px;
+}
+
+.title {
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
