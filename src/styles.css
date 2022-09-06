@@ -8,7 +8,7 @@ body {
 body {
   display: flex;
   justify-content: center;
-  background: gray !important;
+  background: #131C24 !important;
 }
 
 @font-face {
@@ -19,7 +19,8 @@ body {
 }
 
 .center-container {
-  width: 390px;
+  max-width: 390px;
+  width: 100%;
   height: 100%;
  background: white; 
 }

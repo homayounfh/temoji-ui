@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { OnboardingPageComponent } from './layouts/onboarding-page/onboarding-page.component';
 
 const routes: Routes = [
-  { path: 'main', component: OnboardingPageComponent }
+  { path: '', component: OnboardingPageComponent }
 ];
 
 @NgModule({
