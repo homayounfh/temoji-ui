@@ -1,10 +1,10 @@
 export interface Products {
-    products: [
-
-        {
-            "id": string,
-            "name": string,
-            "image": string,
-        }
-    ]
+  products: [
+    {
+      id: string;
+      name: string;
+      image: string;
+      recomendedEmojies: string;
+    }
+  ];
 }
