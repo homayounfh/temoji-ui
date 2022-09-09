@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Products } from 'src/app/models/interfaces';
+import { Product } from 'src/app/models/interfaces';
 import { GetProductService } from 'src/app/services/get-product.service';
 
 @Component({
@@ -7,17 +7,12 @@ import { GetProductService } from 'src/app/services/get-product.service';
   templateUrl: './onboarding-page.component.html',
   styleUrls: ['./onboarding-page.component.css']
 })
-export class OnboardingPageComponent implements OnInit {
-  products!: Products;
 
-  constructor(private _products: GetProductService) { }
+export class OnboardingPageComponent implements OnInit {
+  constructor() { }
+
 
   ngOnInit(): void {
-    this._products.getProducts().subscribe(data => {
-      this.products = data;
-      console.log(this.products);
-      
-    })
   }
 
 }

@@ -1,10 +1,9 @@
-export interface Products {
-    products: [
+export interface Product {
+    "id": string,
+    "name": string,
+    "image": string,
+}
 
-        {
-            "id": string,
-            "name": string,
-            "image": string,
-        }
-    ]
+export interface ProductResponse {
+    "products": Product[]
 }

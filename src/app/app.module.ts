@@ -8,12 +8,14 @@ import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
 import { BrowserModule } from '@angular/platform-browser';
 import {  HttpClientModule } from '@angular/common/http';
+import { SurveyComponent } from './layouts/survey/survey.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     OnboardingPageComponent,
+    SurveyComponent,
   ],
   imports: [
     BrowserModule,
