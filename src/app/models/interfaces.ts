@@ -4,7 +4,15 @@ export interface Products {
       id: string;
       name: string;
       image: string;
-      recomendedEmojies: string;
+      recommendedEmojies: string;
     }
   ];
+}
+export interface SurveyRequest {
+  surveyId: string;
+  _items: [SurveyRequestItem];
+}
+export interface SurveyRequestItem {
+  productId: string;
+  selectedEmojies: string;
 }
