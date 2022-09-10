@@ -1,5 +1,36 @@
-<p style="color:white;">{{surveyId}}</p>
+<div class="center-container">
+
+    <img src="../../../assets/geometry.png" alt="geometry" class="geometry">
+
+    <div class="d-flex flex-column justify-content-end align-items-center content-container">
+        <img src="../../../assets/frappe.png" width="120px" height="268px" alt="frappe" style="margin-bottom: 24px;">
+        <h3 class="product-title">فراپه شکلات</h3>
+        <h3 class="question">نسبت به این محصول تیبار چه حسی دارید؟</h3>
+        <div class="d-flex selected-emojies"></div>
+        <div class="d-flex recommended-emojies-container">
+            <button class="back-btn d-flex justify-content-center align-items-center"><img
+                    src="../../../assets/add emojie.png" alt="back arrow" width="27px" height="25.77px">
+            </button>
+            <div class="d-flex recommended-emojies" *ngFor="let emojie of "></div>
+        </div>
+        <div class="line-break"></div>
+        <div class="d-flex button-container w-100">
+            <div class="d-flex justify-content-between btn-container  w-100">
+                <button class="next-btn d-flex justify-content-center align-items-center flex-fill"
+                    (click)="next()"><img src="../../../assets/forward arrow.png" width="11px" height="19px" alt="">
+                    بعدی</button>
+                <button class="back-btn d-flex justify-content-center align-items-center" (click)="previous()"><img
+                        src="../../../assets/back arrow.png" alt="back arrow" width="10.74px" height="18.76px">
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- <p style="color:white;">{{surveyId}}</p>
 <div style="color:white;">{{products.products[currentProductIndex].name}}</div>
 <button (click)="next()">next</button>
 <button (click)="previous()">previous</button>
-<div  style="color:white;">{{this.selectedEmojies[currentProductIndex]}}</div>
+<div  style="color:white;">{{this.selectedEmojies[currentProductIndex]}}</div> -->

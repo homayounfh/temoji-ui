@@ -1,0 +1,95 @@
+.center-container {
+  background: #131c24;
+}
+
+.geometry {
+  position: absolute;
+  max-width: 550px;
+  width: 100%;
+}
+
+.content-container {
+  max-width: 550px;
+  width: 100%;
+  height: 100%;
+}
+
+.button-container {
+  padding: 28px 16px;
+  background: #1c2732;
+}
+
+.next-btn {
+  padding: 12px 10px;
+  gap: 10px;
+  height: 55px;
+  background: #005a9c;
+  border-radius: 62px;
+  border: none;
+}
+
+.next-btn {
+  margin: 0;
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 31px;
+  color: #ffffff;
+}
+
+.back-btn {
+  padding: 12px 10px;
+  padding: 12px 10px;
+  gap: 10px;
+  width: 55px;
+  height: 55px;
+  background: #273645;
+  border-radius: 62px;
+  border: none;
+}
+
+.btn-container {
+  gap: 8px;
+}
+
+.recommended-emojies-container {
+  width: 100%;
+  padding: 28px 0 28px 16px;
+  background: #1c2732;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.line-break {
+  background: rgba(39, 54, 69, 0.5);
+  height: 1px;
+  width: 100%;
+}
+
+.selected-emojies {
+  padding: 12px 16px;
+  background: #1c2732;
+  gap: 10px;
+  border-radius: 28px;
+  margin-bottom: 34px;
+}
+
+.question {
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 25px;
+  color: #80d9ff;
+  margin-bottom: 24px;
+}
+
+.product-title {
+    margin-bottom: 24px;
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 56px;
+  color: #80d9ff;
+}
