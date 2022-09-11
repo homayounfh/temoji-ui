@@ -42,7 +42,7 @@
   padding: 12px 10px;
   padding: 12px 10px;
   gap: 10px;
-  width: 55px;
+  min-width: 55px;
   height: 55px;
   background: #273645;
   border-radius: 62px;
@@ -85,11 +85,55 @@
 }
 
 .product-title {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
   font-family: "IRANSans";
   font-style: normal;
   font-weight: 900;
   font-size: 36px;
   line-height: 56px;
   color: #80d9ff;
+}
+
+.emoji-btn {
+  padding: 12px 10px;
+  
+  min-width: 55px;
+  height: 55px;
+  background: #273645;
+  border-radius: 62px;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: normal;
+  align-items: center;
+}
+
+.emoji-btn > p {
+  margin: 0;
+}
+
+.recommended-emojies {
+  gap: 10px;
+  margin-left: 8px;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  padding-right: 16px;
+}
+
+.recommended-emojies::-webkit-scrollbar {
+  display: none;
+}
+
+.selected-emojies > p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
 }

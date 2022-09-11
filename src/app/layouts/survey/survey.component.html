@@ -4,14 +4,20 @@
 
     <div class="d-flex flex-column justify-content-end align-items-center content-container">
         <img src="../../../assets/frappe.png" width="120px" height="268px" alt="frappe" style="margin-bottom: 24px;">
-        <h3 class="product-title">فراپه شکلات</h3>
+        <h3 class="product-title">{{products.products[currentProductIndex].name}}</h3>
         <h3 class="question">نسبت به این محصول تیبار چه حسی دارید؟</h3>
-        <div class="d-flex selected-emojies"></div>
+        <div [ngStyle]="{'visibility': selectedEmojies[currentProductIndex] != '' ? '' : 'hidden'}" class="d-flex selected-emojies">
+                <P  *ngFor="let emoji of selectedEmojies[currentProductIndex].split(',')" (click)="deleteEmoji(emoji)">{{emoji}}</P>
+        </div>
         <div class="d-flex recommended-emojies-container">
             <button class="back-btn d-flex justify-content-center align-items-center"><img
-                    src="../../../assets/add emojie.png" alt="back arrow" width="27px" height="25.77px">
+                    src="../../../assets/add emojie.png" alt="add emoji" width="27px" height="25.77px">
             </button>
-            <div class="d-flex recommended-emojies" *ngFor="let emojie of "></div>
+
+            <div class="d-flex recommended-emojies">
+                <button class="emoji-btn d-flex justify-content-center " id="emoji-btn" type="button" (click)="addEmoji(emoji)"
+                    *ngFor="let emoji of recommendedEmojies"><p>{{emoji}}</p></button>
+            </div>
         </div>
         <div class="line-break"></div>
         <div class="d-flex button-container w-100">
