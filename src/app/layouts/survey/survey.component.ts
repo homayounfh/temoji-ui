@@ -62,11 +62,12 @@ export class SurveyComponent implements OnInit {
   addEmoji(elem: string) {
     this.currentSelectedEmojies.push(elem);
     this.selectedEmojies[this.currentProductIndex] = this.currentSelectedEmojies.join(',');
-    console.log(this.selectedEmojies);
-    console.log(this.currentSelectedEmojies);
   }
 
-  deleteEmoji(emoji: string) {
-    
+  deleteEmoji(emojiIndex: number) {
+    let _selectedEmojies = this.selectedEmojies[this.currentProductIndex].split(',');
+    _selectedEmojies.splice(emojiIndex, 1);
+    this.selectedEmojies[this.currentProductIndex] = _selectedEmojies.join(',');
+    this.currentSelectedEmojies = _selectedEmojies
   }
 }

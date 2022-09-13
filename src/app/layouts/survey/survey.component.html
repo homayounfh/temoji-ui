@@ -7,7 +7,7 @@
         <h3 class="product-title">{{products.products[currentProductIndex].name}}</h3>
         <h3 class="question">نسبت به این محصول تیبار چه حسی دارید؟</h3>
         <div [ngStyle]="{'visibility': selectedEmojies[currentProductIndex] != '' ? '' : 'hidden'}" class="d-flex selected-emojies">
-                <P  *ngFor="let emoji of selectedEmojies[currentProductIndex].split(',')" (click)="deleteEmoji(emoji)">{{emoji}}</P>
+                <P  *ngFor="let emoji of currentSelectedEmojies, index as i" (click)="deleteEmoji(i)">{{emoji}}</P>
         </div>
         <div class="d-flex recommended-emojies-container">
             <button class="back-btn d-flex justify-content-center align-items-center"><img
