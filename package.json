@@ -20,7 +20,11 @@
     "@angular/router": "^14.2.0",
     "@ctrl/ngx-emoji-mart": "^7.0.0",
     "bootstrap": "^4.6.2",
+    "if-emoji": "^0.1.0",
+    "ngx-emoj": "^0.0.7",
+    "ngx-emoji-picker": "^0.1.6",
     "rxjs": "~7.4.0",
+    "twemoji": "^14.0.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

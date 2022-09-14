@@ -10,22 +10,36 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./survey.component.css'],
 })
 export class SurveyComponent implements OnInit {
+  text: string = '';
   products!: Products;
   currentProductIndex: number = 0;
   selectedEmojies: Array<string> = [];
   currentSelectedEmojies: Array<string> = [];
+  currentSelectedEmojiesState: Array<number> = [];
   surveyId = uuidv4();
   recommendedEmojies: string[] = [];
+  isEmojiToggled: boolean = false;
 
+  toggled: boolean = false;
 
-  constructor(private _products: ProductService) { }
+  constructor(private _products: ProductService) {}
+
+  isCorrectApply(e: string) {
+    var isCorrect = true;
+    this.currentSelectedEmojies.forEach((emoji) => {
+      if (emoji == e) isCorrect = false;
+    });
+
+    return isCorrect;
+  }
 
   ngOnInit(): void {
     this._products.getProducts().subscribe((data) => {
       this.products = data;
       for (let i = 0; i < this.products.products.length; i++) {
         this.selectedEmojies.push('');
-        this.recommendedEmojies = this.products.products[i].recommendedEmojies.split(",")
+        this.recommendedEmojies =
+          this.products.products[i].recommendedEmojies.split(',');
       }
     });
   }
@@ -33,18 +47,33 @@ export class SurveyComponent implements OnInit {
     if (this.currentProductIndex <= this.products!.products.length) {
       this.currentProductIndex += 1;
       if (this.selectedEmojies[this.currentProductIndex] != '') {
-        this.currentSelectedEmojies = this.selectedEmojies[this.currentProductIndex].split(",");
+        this.currentSelectedEmojies =
+          this.selectedEmojies[this.currentProductIndex].split(',');
+      } else {
+        this.currentSelectedEmojies = [];
       }
-      else { this.currentSelectedEmojies = [] };
     }
   }
+
+  clearAnimationStates() {
+    for (let i = 0; i < this.currentSelectedEmojies.length; i++) {
+      this.currentSelectedEmojiesState[i] = 0;
+    }
+  }
+
+  animate(i: number) {
+    this.currentSelectedEmojiesState[i] = 1;
+  }
+
   previous() {
     if (this.currentProductIndex > 0) {
       this.currentProductIndex -= 1;
       if (this.selectedEmojies[this.currentProductIndex] != '') {
-        this.currentSelectedEmojies = this.selectedEmojies[this.currentProductIndex].split(",");
+        this.currentSelectedEmojies =
+          this.selectedEmojies[this.currentProductIndex].split(',');
+      } else {
+        this.currentSelectedEmojies = [];
       }
-      else { this.currentSelectedEmojies = [] };
     }
   }
   submit() {
@@ -59,15 +88,39 @@ export class SurveyComponent implements OnInit {
     }
   }
 
-  addEmoji(elem: string) {
-    this.currentSelectedEmojies.push(elem);
-    this.selectedEmojies[this.currentProductIndex] = this.currentSelectedEmojies.join(',');
+  addEmojii(e: string) {
+    if (!this.isCorrectApply(e)) {
+      for (let i = 0; i < this.currentSelectedEmojies.length; i++) {
+        if(this.currentSelectedEmojies[i] == e){
+          this.animate(i);
+          break;
+        }
+      }
+      return;
+    }
+    this.currentSelectedEmojies.push(e);
+    this.selectedEmojies[this.currentProductIndex] =
+      this.currentSelectedEmojies.join(',');
   }
 
   deleteEmoji(emojiIndex: number) {
-    let _selectedEmojies = this.selectedEmojies[this.currentProductIndex].split(',');
+    let _selectedEmojies =
+      this.selectedEmojies[this.currentProductIndex].split(',');
     _selectedEmojies.splice(emojiIndex, 1);
     this.selectedEmojies[this.currentProductIndex] = _selectedEmojies.join(',');
-    this.currentSelectedEmojies = _selectedEmojies
+    this.currentSelectedEmojies = _selectedEmojies;
+  }
+
+  addEmoji(a: any) {
+    console.log(a);
+    this.isEmojiToggled = false;
+  }
+
+  isEmojiiToggled() {
+    this.isEmojiToggled = !this.isEmojiToggled;
+  }
+
+  backgroundClicked() {
+    this.isEmojiToggled = false;
   }
 }

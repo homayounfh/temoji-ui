@@ -137,3 +137,64 @@
   margin: 0;
   cursor: pointer;
 }
+
+.emoji-pick {
+  padding: 12px 10px;
+  padding: 12px 10px;
+  gap: 10px;
+  min-width: 55px;
+  height: 55px;
+  background: #273645;
+  border-radius: 62px;
+  border: none;
+}
+
+.emoji-picker::after {
+  width: 100%;
+}
+
+::ng-deep emoji-picker{
+  position: absolute;
+  top: 119px;
+  transform: translate(-16px, -119px) !important;
+}
+
+::ng-deep emoji-content{
+  width: 100% !important;
+  height: 100% !important;
+}
+
+::ng-deep emoji-mart {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+::ng-deep .emoji-mart-preview {
+  display: none;
+}
+
+.shakeit:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+      transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+      transform: translate3d(4px, 0, 0);
+  }
+}
