@@ -6,10 +6,8 @@
   >
     <img
       src="../../../assets/frappe.png"
-      width="120px"
-      height="268px"
-      alt="frappe"
-      style="margin-bottom: 24px"
+      width="90px"
+      style="margin-bottom: 24px;z-index: 3;"
     />
     <h3 class="product-title">
       {{ products.products[currentProductIndex].name }}
@@ -20,6 +18,7 @@
         visibility: selectedEmojies[currentProductIndex] != '' ? '' : 'hidden'
       }"
       class="d-flex selected-emojies"
+      [class.select-anim] = "this.selectedEmojiesAnimation"
     >
       <P
         *ngFor="let emoji of currentSelectedEmojies; index as i"

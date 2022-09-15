@@ -19,6 +19,7 @@ export class SurveyComponent implements OnInit {
   surveyId = uuidv4();
   recommendedEmojies: string[] = [];
   isEmojiToggled: boolean = false;
+  selectedEmojiesAnimation: boolean = false;
 
   toggled: boolean = false;
 
@@ -63,6 +64,9 @@ export class SurveyComponent implements OnInit {
 
   animate(i: number) {
     this.currentSelectedEmojiesState[i] = 1;
+    setTimeout(() => {
+      this.currentSelectedEmojiesState[i] = 0;
+    }, 820);
   }
 
   previous() {
@@ -76,6 +80,7 @@ export class SurveyComponent implements OnInit {
       }
     }
   }
+
   submit() {
     let surveyRequest = {} as SurveyRequest;
     surveyRequest.surveyId = this.surveyId;
@@ -90,8 +95,8 @@ export class SurveyComponent implements OnInit {
 
   addEmojii(e: string) {
     if (!this.isCorrectApply(e)) {
-      for (let i = 0; i < this.currentSelectedEmojies.length; i++) {
-        if(this.currentSelectedEmojies[i] == e){
+      for (let i = 0; i < this.recommendedEmojies.length; i++) {
+        if (this.recommendedEmojies[i] == e) {
           this.animate(i);
           break;
         }
@@ -101,6 +106,11 @@ export class SurveyComponent implements OnInit {
     this.currentSelectedEmojies.push(e);
     this.selectedEmojies[this.currentProductIndex] =
       this.currentSelectedEmojies.join(',');
+    // run animation
+    this.selectedEmojiesAnimation = true;
+    setTimeout(() => {
+      this.selectedEmojiesAnimation = false;
+    }, 400);
   }
 
   deleteEmoji(emojiIndex: number) {
