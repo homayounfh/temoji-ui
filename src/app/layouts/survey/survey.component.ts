@@ -103,7 +103,11 @@ export class SurveyComponent implements OnInit {
       }
       return;
     }
-    this.currentSelectedEmojies.push(e);
+    if(this.currentSelectedEmojies.length < 7) {
+      this.currentSelectedEmojies.push(e);
+    } else {
+      
+    }
     this.selectedEmojies[this.currentProductIndex] =
       this.currentSelectedEmojies.join(',');
     // run animation
