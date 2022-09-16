@@ -93,7 +93,7 @@ export class SurveyComponent implements OnInit {
     }
   }
 
-  addEmojii(e: string) {
+  addEmoji(e: string) {
     if (!this.isCorrectApply(e)) {
       for (let i = 0; i < this.recommendedEmojies.length; i++) {
         if (this.recommendedEmojies[i] == e) {
@@ -125,7 +125,7 @@ export class SurveyComponent implements OnInit {
     this.currentSelectedEmojies = _selectedEmojies;
   }
 
-  addEmoji(a: any) {
+  addCustomEmoji(a: any) {
     console.log(a);
     this.isEmojiToggled = false;
   }

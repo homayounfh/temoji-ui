@@ -44,7 +44,7 @@
           class="emoji-btn d-flex justify-content-center"
           id="emoji-btn"
           type="button"
-          (click)="addEmojii(emoji)"
+          (click)="addEmoji(emoji)"
           *ngFor="let emoji of recommendedEmojies; let i = index"
           [class.shakeit] = "this.currentSelectedEmojiesState[i] == 1"
         >
@@ -99,7 +99,7 @@
     [style]="{ width: '100%', height: '100%' }"
     (isNative)="(true)"
     (showPreview)="(false)"
-    (emojiClick)="addEmoji($event)"
+    (emojiClick)="addCustomEmoji($event)"
     [emojiSize]="34"
     title=""
     [skin]="1"
