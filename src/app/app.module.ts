@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AppComponent } from './app.component';
 import { OnboardingPageComponent } from './layouts/onboarding-page/onboarding-page.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PickerModule,
     EmojiModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
