@@ -1,5 +1,5 @@
 import { SurveyRequestItem } from './../../models/interfaces';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import { Products, SurveyRequest } from 'src/app/models/interfaces';
 import { ProductService } from 'src/app/services/product.service';
@@ -22,6 +22,8 @@ export class SurveyComponent implements OnInit {
   selectedEmojiesAnimation: boolean = false;
 
   toggled: boolean = false;
+
+ 
 
   constructor(private _products: ProductService) {}
 
@@ -125,16 +127,19 @@ export class SurveyComponent implements OnInit {
     this.currentSelectedEmojies = _selectedEmojies;
   }
 
-  addCustomEmoji(a: any) {
-    console.log(a);
+  addCustomEmoji(data: any) {
+    console.log(data.emoji.native);
     this.isEmojiToggled = false;
+    this.addEmoji(data.emoji.native)
+  }
+  
+ 
+  isAddEmojiiToggled() {
+    this.isEmojiToggled = true;
   }
 
-  isEmojiiToggled() {
-    this.isEmojiToggled = !this.isEmojiToggled;
-  }
-
-  backgroundClicked() {
+  isBackgroundToggled() {
     this.isEmojiToggled = false;
   }
+  
 }
