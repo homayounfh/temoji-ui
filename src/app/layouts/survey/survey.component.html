@@ -7,7 +7,7 @@
     <img
       src="../../../assets/frappe.png"
       width="90px"
-      style="margin-bottom: 24px;z-index: 3;"
+      style="margin-bottom: 24px; z-index: 3"
     />
     <h3 class="product-title">
       {{ products.products[currentProductIndex].name }}
@@ -18,7 +18,7 @@
         visibility: selectedEmojies[currentProductIndex] != '' ? '' : 'hidden'
       }"
       class="d-flex selected-emojies"
-      [class.select-anim] = "this.selectedEmojiesAnimation"
+      [class.select-anim]="this.selectedEmojiesAnimation"
     >
       <P
         *ngFor="let emoji of currentSelectedEmojies; index as i"
@@ -29,7 +29,7 @@
     <div class="d-flex recommended-emojies-container">
       <button
         class="emoji-pick d-flex justify-content-center align-items-center"
-        (click)="isEmojiiToggled()"
+        (click)="isAddEmojiiToggled()"
       >
         <img
           src="../../../assets/add emojie.png"
@@ -46,7 +46,7 @@
           type="button"
           (click)="addEmoji(emoji)"
           *ngFor="let emoji of recommendedEmojies; let i = index"
-          [class.shakeit] = "this.currentSelectedEmojiesState[i] == 1"
+          [class.shakeit]="this.currentSelectedEmojiesState[i] == 1"
         >
           <p>{{ emoji }}</p>
         </button>
@@ -85,7 +85,6 @@
 
 <div
   *ngIf="isEmojiToggled"
-  (click)="backgroundClicked()"
   style="
     position: absolute;
     width: 100%;
@@ -95,11 +94,23 @@
     z-index: 999;
   "
 >
+  <div
+ (click)="isBackgroundToggled()"
+    class="blur-background"
+    style="
+      position: absolute;
+      width: 100%;
+      height: calc(100% - 360px);
+      top: 0;
+      backdrop-filter: blur(5px);
+      z-index: 999;
+    "
+  ></div>
   <emoji-mart
     [style]="{ width: '100%', height: '100%' }"
     (isNative)="(true)"
     (showPreview)="(false)"
-    (emojiClick)="addCustomEmoji($event)"
+    (emojiSelect)="addCustomEmoji($event)"
     [emojiSize]="34"
     title=""
     [skin]="1"
