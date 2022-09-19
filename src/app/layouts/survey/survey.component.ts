@@ -3,6 +3,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import { Products, SurveyRequest } from 'src/app/models/interfaces';
 import { ProductService } from 'src/app/services/product.service';
+import { SurveyService } from 'src/app/services/survey.service';
+import { catchError } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-survey',
@@ -23,9 +26,11 @@ export class SurveyComponent implements OnInit {
 
   toggled: boolean = false;
 
- 
-
-  constructor(private _products: ProductService) {}
+  constructor(
+    private _products: ProductService,
+    private _survey: SurveyService,
+    private _snackBar: MatSnackBar,
+  ) {}
 
   isCorrectApply(e: string) {
     var isCorrect = true;
@@ -93,6 +98,26 @@ export class SurveyComponent implements OnInit {
       sri.selectedEmojies = this.selectedEmojies[i];
       items.push(sri);
     }
+
+    this._survey.submitSurvey(surveyRequest).subscribe({
+      next: (v) => console.log(v),
+      error: (e) => {
+        if(e.status == 400) {
+          this.openSnackBar('Bad Request!')
+        } 
+        if(e.status == 500) {
+          this.openSnackBar('Internal Server Error')
+        }
+      },
+      complete: () => console.info('complete') 
+  });
+  }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message, '', {
+      duration: 3000
+    });
+
   }
 
   addEmoji(e: string) {
@@ -105,11 +130,9 @@ export class SurveyComponent implements OnInit {
       }
       return;
     }
-    if(this.currentSelectedEmojies.length < 7) {
+    if (this.currentSelectedEmojies.length < 7) {
       this.currentSelectedEmojies.push(e);
-    } else {
-      
-    }
+    } 
     this.selectedEmojies[this.currentProductIndex] =
       this.currentSelectedEmojies.join(',');
     // run animation
@@ -130,10 +153,9 @@ export class SurveyComponent implements OnInit {
   addCustomEmoji(data: any) {
     console.log(data.emoji.native);
     this.isEmojiToggled = false;
-    this.addEmoji(data.emoji.native)
+    this.addEmoji(data.emoji.native);
   }
-  
- 
+
   isAddEmojiiToggled() {
     this.isEmojiToggled = true;
   }
@@ -141,5 +163,4 @@ export class SurveyComponent implements OnInit {
   isBackgroundToggled() {
     this.isEmojiToggled = false;
   }
-  
 }

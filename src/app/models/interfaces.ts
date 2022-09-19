@@ -16,3 +16,4 @@ export interface SurveyRequestItem {
   productId: string;
   selectedEmojies: string;
 }
+

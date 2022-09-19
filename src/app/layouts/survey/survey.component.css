@@ -26,9 +26,6 @@
   background: #005a9c;
   border-radius: 62px;
   border: none;
-}
-
-.next-btn {
   margin: 0;
   font-family: "IRANSans";
   font-style: normal;
@@ -229,4 +226,43 @@
   100% {
     transform: translate3d(0, 0px, 0);
   }
+}
+
+.submit-btn {
+  padding: 12px 10px;
+  gap: 10px;
+  height: 55px;
+  background: #005a9c;
+  border-radius: 62px;
+  border: none;
+  margin: 0;
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 31px;
+  color: #ffffff;
+}
+
+.overselecting {
+  max-width: 328px;
+  width: 100%;
+  margin-bottom: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #f73155;
+  background: rgba(247, 49, 85, 0.14);
+  border-radius: 8px;
+}
+
+.after-selecting-emojies {
+  border-radius: 20px 20px 0px 0px;
 }

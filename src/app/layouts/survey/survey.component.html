@@ -26,7 +26,7 @@
         >{{ emoji }}</P
       >
     </div>
-    <div class="d-flex recommended-emojies-container">
+    <div *ngIf="currentSelectedEmojies.length != 7 " class="d-flex recommended-emojies-container">
       <button
         class="emoji-pick d-flex justify-content-center align-items-center"
         (click)="isAddEmojiiToggled()"
@@ -52,10 +52,11 @@
         </button>
       </div>
     </div>
-    <div class="line-break"></div>
-    <div class="d-flex button-container w-100">
+    <div dir="rtl" class="overselecting" *ngIf="currentSelectedEmojies.length == 7">شما اموجی های خود را انتخاب کردید!!</div>
+    <div *ngIf="currentSelectedEmojies.length != 7" class="line-break"></div>
+    <div [ngClass]="{'after-selecting-emojies': currentSelectedEmojies.length === 7}"  class="d-flex button-container w-100">
       <div class="d-flex justify-content-between btn-container w-100">
-        <button
+        <button *ngIf="this.currentProductIndex != this.products.products.length - 1"
           class="next-btn d-flex justify-content-center align-items-center flex-fill"
           (click)="next()"
         >
@@ -67,6 +68,11 @@
           />
           بعدی
         </button>
+
+        <button 
+        class="submit-btn d-flex justify-content-center align-items-center flex-fill"
+        *ngIf="currentProductIndex == products.products.length - 1" (click)="submit()">اتمام</button>
+
         <button
           class="back-btn d-flex justify-content-center align-items-center"
           (click)="previous()"
