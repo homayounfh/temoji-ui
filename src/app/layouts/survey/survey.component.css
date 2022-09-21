@@ -1,0 +1,268 @@
+.center-container {
+  background: #131c24;
+}
+
+.geometry {
+  position: absolute;
+  max-width: 550px;
+  width: 100%;
+}
+
+.content-container {
+  max-width: 550px;
+  width: 100%;
+  height: 100%;
+}
+
+.button-container {
+  padding: 28px 16px;
+  background: #1c2732;
+}
+
+.next-btn {
+  padding: 12px 10px;
+  gap: 10px;
+  height: 55px;
+  background: #005a9c;
+  border-radius: 62px;
+  border: none;
+  margin: 0;
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 31px;
+  color: #ffffff;
+}
+
+.back-btn {
+  padding: 12px 10px;
+  padding: 12px 10px;
+  gap: 10px;
+  min-width: 55px;
+  height: 55px;
+  background: #273645;
+  border-radius: 62px;
+  border: none;
+}
+
+.btn-container {
+  gap: 8px;
+}
+
+.recommended-emojies-container {
+  width: 100%;
+  padding: 28px 0 28px 16px;
+  background: #1c2732;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.line-break {
+  background: rgba(39, 54, 69);
+  min-height: 1px;
+  width: 100%;
+}
+
+.selected-emojies {
+  z-index: 2;
+  padding: 12px 16px;
+  background: #1c2732;
+  gap: 10px;
+  border-radius: 28px;
+  margin-bottom: 34px;
+}
+
+.question {
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 25px;
+  color: #80d9ff;
+  margin-bottom: 24px;
+}
+
+.product-title {
+  margin-bottom: 24px;
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 56px;
+  color: #80d9ff;
+}
+
+.emoji-btn {
+  padding: 12px 10px;
+
+  min-width: 55px;
+  height: 55px;
+  background: #273645;
+  border-radius: 62px;
+  border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: normal;
+  align-items: center;
+}
+
+.emoji-btn > p {
+  margin: 0;
+}
+
+.recommended-emojies {
+  gap: 10px;
+  margin-left: 8px;
+  overflow: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  padding-right: 16px;
+}
+
+.recommended-emojies::-webkit-scrollbar {
+  display: none;
+}
+
+.selected-emojies > p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+}
+
+.emoji-pick {
+  padding: 12px 10px;
+  padding: 12px 10px;
+  gap: 10px;
+  min-width: 55px;
+  height: 55px;
+  background: #273645;
+  border-radius: 62px;
+  border: none;
+}
+
+.emoji-picker::after {
+  width: 100%;
+}
+
+::ng-deep emoji-picker {
+  position: absolute;
+  top: 119px;
+  transform: translate(-16px, -119px) !important;
+}
+
+::ng-deep emoji-content {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+::ng-deep emoji-mart {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 550px;
+}
+
+::ng-deep .emoji-mart-preview {
+  display: none;
+}
+
+.shakeit {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.select-anim {
+  animation: shakeup 0.4s ease-in-out both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shakeup {
+  0% {
+    transform: translate3d(0, 0px, 0);
+  }
+
+  30% {
+    transform: translate3d(0, -3px, 0);
+  }
+
+  60% {
+    transform: translate3d(0, 2px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
+.submit-btn {
+  padding: 12px 10px;
+  gap: 10px;
+  height: 55px;
+  background: #005a9c;
+  border-radius: 62px;
+  border: none;
+  margin: 0;
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 31px;
+  color: #ffffff;
+}
+
+.overselecting {
+  max-width: 328px;
+  width: 100%;
+  margin-bottom: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  font-family: "IRANSans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #f73155;
+  background: rgba(247, 49, 85, 0.14);
+  border-radius: 8px;
+}
+
+.after-selecting-emojies {
+  border-radius: 20px 20px 0px 0px;
+}

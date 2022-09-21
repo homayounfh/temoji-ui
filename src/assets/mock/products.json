@@ -3,17 +3,20 @@
     {
       "id": "d2bf1a7e-9e44-4677-b796-b59bfd267e15",
       "name": "Frappe",
-      "image": "image"
+      "image": "image",
+      "recommendedEmojies": "😂,😍,😋,😴,💕,😎,🙁,❤️"
     },
     {
       "id": "8492f9b8-e73a-4dea-b0de-34713f479c07",
       "name": "Iced latte",
-      "image": "image"
+      "image": "image",
+      "recommendedEmojies": "😂,😍,😋,🙁,❤️,😴,💕,😎"
     },
     {
       "id": "5b0fa03b-d0f0-4194-a855-653c24ebbafc",
       "name": "Mocha",
-      "image": "image"
+      "image": "image",
+      "recommendedEmojies": "😂,💕,😎,🙁,😍,😋,😴,❤️"
     }
   ]
 }
