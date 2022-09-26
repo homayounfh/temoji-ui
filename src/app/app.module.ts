@@ -9,10 +9,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { SurveyComponent } from './layouts/survey/survey.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppreciationComponent } from './layouts/appreciation/appreciation.component';
 
 
 @NgModule({
-  declarations: [AppComponent, OnboardingPageComponent, SurveyComponent],
+  declarations: [AppComponent, OnboardingPageComponent, SurveyComponent, AppreciationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
