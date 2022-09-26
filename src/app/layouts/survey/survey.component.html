@@ -71,7 +71,7 @@
 
         <button 
         class="submit-btn d-flex justify-content-center align-items-center flex-fill"
-        *ngIf="currentProductIndex == products.products.length - 1" (click)="submit()">اتمام</button>
+        *ngIf="currentProductIndex == products.products.length - 1" [routerLink]="['/appreciation']" (click)="submit()">اتمام</button>
 
         <button
           class="back-btn d-flex justify-content-center align-items-center"
