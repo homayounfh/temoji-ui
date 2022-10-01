@@ -11,6 +11,6 @@ export class SurveyService {
   constructor(private _http: HttpClient) { }
 
   submitSurvey(data: SurveyRequest): Observable<any> {
-   return this._http.post<any>('', data);
+   return this._http.post<any>('https://temoji-api-gamenet.apps.ir-thr-at1.arvan.run/survey', data);
   }
 }
