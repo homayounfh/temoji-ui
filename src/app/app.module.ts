@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SurveyComponent } from './layouts/survey/survey.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppreciationComponent } from './layouts/appreciation/appreciation.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AppreciationComponent } from './layouts/appreciation/appreciation.compo
     EmojiModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

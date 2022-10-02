@@ -1,19 +1,19 @@
 export interface Products {
-  products: [
+  "products": [
     {
       id: string;
       name: string;
       image: string;
-      recommendedEmojies: string;
+      recomendedEmojis: string;
     }
   ];
 }
 export interface SurveyRequest {
   surveyId: string;
-  _items: [SurveyRequestItem];
+  _items: SurveyRequestItem[];
 }
 export interface SurveyRequestItem {
   productId: string;
-  selectedEmojies: string;
+  selectedEmojis: string;
 }
 

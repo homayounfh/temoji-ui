@@ -10,7 +10,7 @@ export class ProductService {
   constructor(private _http: HttpClient) { }
 
   getProducts(): Observable<Products> {
-    return this._http.get<Products>(`https://temoji-api-gamenet.apps.ir-thr-at1.arvan.run/products`)
+    return this._http.get<Products>('https://temoji-api-gamenet.apps.ir-thr-at1.arvan.run/products')
   }
 
 }

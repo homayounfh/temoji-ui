@@ -1,3 +1,4 @@
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center loading"><div class="d-flex justify-content-center align-items-center lds-ring"><div></div><div></div><div></div><div></div></div></div>
 <div class="center-container">
   <img src="../../../assets/geometry.png" alt="geometry" class="geometry" />
 
@@ -15,18 +16,18 @@
     <h3 class="question">نسبت به این محصول تی‌بار چه حسی دارید؟</h3>
     <div
       [ngStyle]="{
-        visibility: selectedEmojies[currentProductIndex] != '' ? '' : 'hidden'
+        visibility: selectedEmojis[currentProductIndex] != '' ? '' : 'hidden'
       }"
-      class="d-flex selected-emojies"
-      [class.select-anim]="this.selectedEmojiesAnimation"
+      class="d-flex selected-emojis"
+      [class.select-anim]="this.selectedEmojisAnimation"
     >
       <P
-        *ngFor="let emoji of currentSelectedEmojies; index as i"
+        *ngFor="let emoji of currentSelectedEmojis; index as i"
         (click)="deleteEmoji(i)"
         >{{ emoji }}</P
       >
     </div>
-    <div *ngIf="currentSelectedEmojies.length != 7 " class="d-flex recommended-emojies-container">
+    <div *ngIf="currentSelectedEmojis.length != 7 " class="d-flex recommended-emojis-container">
       <button
         class="emoji-pick d-flex justify-content-center align-items-center"
         (click)="isAddEmojiiToggled()"
@@ -39,22 +40,22 @@
         />
       </button>
 
-      <div class="d-flex recommended-emojies">
+      <div class="d-flex recommended-emojis">
         <button
           class="emoji-btn d-flex justify-content-center"
           id="emoji-btn"
           type="button"
           (click)="addEmoji(emoji)"
-          *ngFor="let emoji of recommendedEmojies; let i = index"
-          [class.shakeit]="this.currentSelectedEmojiesState[i] == 1"
+          *ngFor="let emoji of recomendedEmojis; let i = index"
+          [class.shakeit]="this.currentSelectedEmojisState[i] == 1"
         >
           <p>{{ emoji }}</p>
         </button>
       </div>
     </div>
-    <div dir="rtl" class="overselecting" *ngIf="currentSelectedEmojies.length == 7">شما اموجی های خود را انتخاب کردید!</div>
-    <div *ngIf="currentSelectedEmojies.length != 7" class="line-break"></div>
-    <div [ngClass]="{'after-selecting-emojies': currentSelectedEmojies.length === 7}"  class="d-flex button-container w-100">
+    <div dir="rtl" class="overselecting" *ngIf="currentSelectedEmojis.length == 7">شما اموجی های خود را انتخاب کردید!</div>
+    <div *ngIf="currentSelectedEmojis.length != 7" class="line-break"></div>
+    <div [ngClass]="{'after-selecting-emojis': currentSelectedEmojis.length === 7}"  class="d-flex button-container w-100">
       <div class="d-flex justify-content-between btn-container w-100">
         <button *ngIf="this.currentProductIndex != this.products.products.length - 1"
           class="next-btn d-flex justify-content-center align-items-center flex-fill"
@@ -71,7 +72,7 @@
 
         <button 
         class="submit-btn d-flex justify-content-center align-items-center flex-fill"
-        *ngIf="currentProductIndex == products.products.length - 1" [routerLink]="['/appreciation']" (click)="submit()">اتمام</button>
+        *ngIf="currentProductIndex == products.products.length - 1" (click)="submit()">اتمام</button>
 
         <button
           class="back-btn d-flex justify-content-center align-items-center"
@@ -130,12 +131,12 @@
 <div style="color:white;">{{products.products[currentProductIndex].name}}</div>
 <button (click)="next()">next</button>
 <button (click)="previous()">previous</button>
-<div  style="color:white;">{{this.selectedEmojies[currentProductIndex]}}</div> -->
+<div  style="color:white;">{{this.selectedEmojis[currentProductIndex]}}</div> -->
 <!-- <p style="color: white">{{ surveyId }}</p>
 <div style="color: white">
   {{ this.products.products[this.currentProductIndex].name }}
 </div>
 <button (click)="next()">next</button>
 <button (click)="previous()">previous</button>
-<div style="color: white">{{ this.selectedEmojies[currentProductIndex] }}</div>
+<div style="color: white">{{ this.selectedEmojis[currentProductIndex] }}</div>
 <button (click)="submit()">submit</button> -->

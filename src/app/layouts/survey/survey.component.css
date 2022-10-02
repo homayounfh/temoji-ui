@@ -50,7 +50,7 @@
   gap: 8px;
 }
 
-.recommended-emojies-container {
+.recommended-emojis-container {
   width: 100%;
   padding: 28px 0 28px 16px;
   background: #1c2732;
@@ -63,7 +63,7 @@
   width: 100%;
 }
 
-.selected-emojies {
+.selected-emojis {
   z-index: 2;
   padding: 12px 16px;
   background: #1c2732;
@@ -111,7 +111,7 @@
   margin: 0;
 }
 
-.recommended-emojies {
+.recommended-emojis {
   gap: 10px;
   margin-left: 8px;
   overflow: scroll;
@@ -120,11 +120,11 @@
   padding-right: 16px;
 }
 
-.recommended-emojies::-webkit-scrollbar {
+.recommended-emojis::-webkit-scrollbar {
   display: none;
 }
 
-.selected-emojies > p {
+.selected-emojis > p {
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -263,6 +263,51 @@
   border-radius: 8px;
 }
 
-.after-selecting-emojies {
+.after-selecting-emojis {
   border-radius: 20px 20px 0px 0px;
+}
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  background: #131C24;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  margin: 3px;
+  border: 3px solid #5ADDE5;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #5ADDE5 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
