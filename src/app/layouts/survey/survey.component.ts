@@ -30,7 +30,7 @@ export class SurveyComponent implements OnInit {
     private _products: ProductService,
     private _survey: SurveyService,
     private _snackBar: MatSnackBar,
-    private _route: Router,
+    private _route: Router
   ) {}
 
   isCorrectApply(e: string) {
@@ -47,36 +47,30 @@ export class SurveyComponent implements OnInit {
     this._products.getProducts().subscribe({
       next: (v) => {
         this.products = v;
-        
-      for (let i = 0; i < this.products.products.length; i++) {
-        this.selectedEmojis.push('');
-        this.recomendedEmojis =
-          this.products.products[i].recomendedEmojis.split(',');
-      }
+        if ((this.products.products.length as number) != 0) {
+          this.recomendedEmojis =
+            this.products.products[0].recomendedEmojis.split(',');
+        }
+        for (let i = 0; i < this.products.products.length; i++) {
+          this.selectedEmojis.push('');
+        }
       },
       error: (e) => {
         this.isLoading = false;
-        if(e.status == 500) {
-          this.openSnackBar('Internal Server Error')
+        if (e.status == 500) {
+          this.openSnackBar('Internal Server Error');
         }
       },
-      complete: () => this.isLoading = false 
-    }
-    //   (data) => {
-    //   this.products = data;
-    //   for (let i = 0; i < this.products.products.length; i++) {
-    //     this.selectedEmojis.push('');
-    //     this.recomendedEmojis =
-    //       this.products.products[i].recomendedEmojis.split(',');
-    //   }
-      
-    // }
-    
-    );
+      complete: () => (this.isLoading = false),
+    });
   }
   next() {
     if (this.currentProductIndex <= this.products!.products.length) {
       this.currentProductIndex += 1;
+      this.recomendedEmojis =
+        this.products.products[this.currentProductIndex].recomendedEmojis.split(
+          ','
+        );
       if (this.selectedEmojis[this.currentProductIndex] != '') {
         this.currentSelectedEmojis =
           this.selectedEmojis[this.currentProductIndex].split(',');
@@ -102,6 +96,10 @@ export class SurveyComponent implements OnInit {
   previous() {
     if (this.currentProductIndex > 0) {
       this.currentProductIndex -= 1;
+      this.recomendedEmojis =
+        this.products.products[this.currentProductIndex].recomendedEmojis.split(
+          ','
+        );
       if (this.selectedEmojis[this.currentProductIndex] != '') {
         this.currentSelectedEmojis =
           this.selectedEmojis[this.currentProductIndex].split(',');
@@ -124,25 +122,24 @@ export class SurveyComponent implements OnInit {
     surveyRequest._items = items;
     this._survey.submitSurvey(surveyRequest).subscribe({
       next: (v) => {
-        this._route.navigate(['appreciation'])
+        this._route.navigate(['appreciation']);
       },
       error: (e) => {
-        if(e.status == 400) {
-          this.openSnackBar('Bad Request!')
-        } 
-        if(e.status == 500) {
-          this.openSnackBar('Internal Server Error')
+        if (e.status == 400) {
+          this.openSnackBar('Bad Request!');
+        }
+        if (e.status == 500) {
+          this.openSnackBar('Internal Server Error');
         }
       },
-      complete: () => console.info('complete') 
-  });
+      complete: () => console.info('complete'),
+    });
   }
 
   openSnackBar(message: string) {
     this._snackBar.open(message, '', {
-      duration: 3000
+      duration: 3000,
     });
-
   }
 
   addEmoji(e: string) {
@@ -157,7 +154,7 @@ export class SurveyComponent implements OnInit {
     }
     if (this.currentSelectedEmojis.length < 7) {
       this.currentSelectedEmojis.push(e);
-    } 
+    }
     this.selectedEmojis[this.currentProductIndex] =
       this.currentSelectedEmojis.join(',');
     // run animation
