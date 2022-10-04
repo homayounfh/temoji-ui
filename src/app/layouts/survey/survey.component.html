@@ -115,28 +115,11 @@
   ></div>
   <emoji-mart
     [style]="{ width: '100%', height: '100%' }"
-    (isNative)="(true)"
+    [isNative]="true"
     (showPreview)="(false)"
     (emojiSelect)="addCustomEmoji($event)"
     [emojiSize]="34"
     title=""
     [skin]="1"
   ></emoji-mart>
-  <!-- <emoji-mart
-          [style]="{ position: 'absolute', bottom: '20px', right: '20px' }"
-        ></emoji-mart> -->
 </div>
-
-<!-- <p style="color:white;">{{surveyId}}</p>
-<div style="color:white;">{{products.products[currentProductIndex].name}}</div>
-<button (click)="next()">next</button>
-<button (click)="previous()">previous</button>
-<div  style="color:white;">{{this.selectedEmojis[currentProductIndex]}}</div> -->
-<!-- <p style="color: white">{{ surveyId }}</p>
-<div style="color: white">
-  {{ this.products.products[this.currentProductIndex].name }}
-</div>
-<button (click)="next()">next</button>
-<button (click)="previous()">previous</button>
-<div style="color: white">{{ this.selectedEmojis[currentProductIndex] }}</div>
-<button (click)="submit()">submit</button> -->

@@ -152,7 +152,7 @@ export class SurveyComponent implements OnInit {
       }
       return;
     }
-    if (this.currentSelectedEmojis.length < 7) {
+    if (this.currentSelectedEmojis.length < 6) {
       this.currentSelectedEmojis.push(e);
     }
     this.selectedEmojis[this.currentProductIndex] =
@@ -173,7 +173,6 @@ export class SurveyComponent implements OnInit {
   }
 
   addCustomEmoji(data: any) {
-    console.log(data.emoji.native);
     this.isEmojiToggled = false;
     this.addEmoji(data.emoji.native);
   }
